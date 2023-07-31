@@ -1,0 +1,15 @@
+{
+  "_id": "b69c7c25-5925-4a3d-9207-e5a217407026",
+  "context": "AUTHENTICATION_TREE_DECISION_NODE",
+  "createdBy": "null",
+  "creationDate": 0,
+  "default": false,
+  "description": null,
+  "language": "JAVASCRIPT",
+  "lastModifiedBy": "null",
+  "lastModifiedDate": 0,
+  "name": "tc-demo-audit-login",
+  "script": {
+    "file": "scripts-content/AUTHENTICATION_TREE_DECISION_NODE/tc-demo-audit-login.js"
+  }
+}
