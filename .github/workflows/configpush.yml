@@ -1,7 +1,7 @@
 name: ForgeRock Identity Cloud static config push
 
 env:
-  SERVICE_ACCOUNT_ID: ${{ vars.SERVICE_ACCOUNT_ID }}
+  SERVICE_ACCOUNT_ID: ${{ secrets.SERVICE_ACCOUNT_ID }}
   SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
   TENANT_BASE_URL: ${{ vars.TENANT_BASE_URL }}
   REALMS: ${{ vars.REALMS }}
