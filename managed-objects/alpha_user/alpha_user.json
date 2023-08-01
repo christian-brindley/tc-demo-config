@@ -13,6 +13,11 @@
   },
   "name": "alpha_user",
   "notifications": {},
+  "onUpdate": {
+    "file": "alpha_user.onUpdate.js",
+    "globals": {},
+    "type": "text/javascript"
+  },
   "schema": {
     "$schema": "http://json-schema.org/draft-03/schema",
     "icon": "fa-user",
