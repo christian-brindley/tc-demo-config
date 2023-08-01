@@ -1,6 +1,6 @@
 {
   "_id": "Login",
-  "_rev": "-1435508762",
+  "_rev": "1309921453",
   "description": "Platform Login Tree",
   "enabled": true,
   "entryNodeId": "a12bc72f-ad97-4f1e-a789-a1fa3dd566c8",
@@ -19,12 +19,21 @@
     "33b24514-3e50-4180-8f08-ab6f4e51b07e": {
       "connections": {
         "false": "e301438c-0bd0-429c-ab0c-66126501069a",
-        "true": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+        "true": "3c0b3726-1381-45ae-ba3b-aef88f3c17d0"
       },
       "displayName": "Inner Tree Evaluator",
       "nodeType": "InnerTreeEvaluatorNode",
       "x": 815,
       "y": 180
+    },
+    "3c0b3726-1381-45ae-ba3b-aef88f3c17d0": {
+      "connections": {
+        "success": "70e691a5-1e33-4ac3-a356-e7b6d60d92e0"
+      },
+      "displayName": "Audit Login",
+      "nodeType": "ScriptedDecisionNode",
+      "x": 897,
+      "y": 377.015625
     },
     "a12bc72f-ad97-4f1e-a789-a1fa3dd566c8": {
       "connections": {
