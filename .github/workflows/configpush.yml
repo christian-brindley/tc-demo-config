@@ -11,12 +11,12 @@ env:
   CONFIG_DIR: ${{ github.workspace }}
 
 on:
-  pull_request:
-    branches:
-    - main
+  pull_request_review:
+    types: [submitted]
 
 jobs:
-  build:
+  approved:
+    if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     strategy:
       matrix:
