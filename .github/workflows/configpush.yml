@@ -1,0 +1,42 @@
+name: ForgeRock Identity Cloud static config push
+
+env:
+  SERVICE_ACCOUNT_ID: ${{ secrets.SERVICE_ACCOUNT_ID }}
+  SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+  TENANT_BASE_URL: ${{ vars.TENANT_BASE_URL }}
+  REALMS: ${{ vars.REALMS }}
+  SCRIPT_PREFIXES: ${{ vars.SCRIPT_PREFIXES }}
+  SERVICE_ACCOUNT_CLIENT_ID: ${{ vars.SERVICE_ACCOUNT_CLIENT_ID }}
+  SERVICE_ACCOUNT_SCOPE: ${{ vars.SERVICE_ACCOUNT_SCOPE }}
+  CONFIG_DIR: ${{ github.workspace }}
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 19.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: install external repo
+      run: git clone https://github.com/ForgeRock/fr-config-manager.git
+    - name: Install config push
+      run: |
+          cd fr-config-manager
+          npm install --ws
+          cd packages/fr-config-push
+          npm link
+    - name: Update static config
+      run: fr-config-push all-static
+
