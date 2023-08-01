@@ -35,11 +35,11 @@ var nodeLogger = {
 
 (function () {
   try {
-    nodeLogger.debug("Node starting");
+    nodeLogger.debug("Node starting...");
 
     auditEntryDetail = {
-      event: "Login"
-    }
+      event: "Login",
+    };
 
     action = javaImports.Action.goTo(nodeOutcomes.SUCCESS).build();
   } catch (e) {
