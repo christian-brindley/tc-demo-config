@@ -36,5 +36,5 @@ jobs:
           cd packages/fr-config-push
           npm link
     - name: Update static config
-      run: fr-config-push all-static
+      run: fr-config-push all-static --metadata.pushedAt $(date -u +"%Y-%m-%dT%H:%M:%SZ") --metadata.versionInfo.rev $(git rev-parse HEAD)
 
