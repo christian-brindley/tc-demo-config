@@ -1,12 +1,13 @@
 {
   "_id": "",
-  "_rev": "317190642",
+  "_rev": "-1456172782",
   "_type": {
     "_id": "oauth-oidc",
     "collection": false,
     "name": "OAuth2 Provider"
   },
   "advancedOAuth2Config": {
+    "allowClientCredentialsInTokenRequestQueryParameters": true,
     "allowedAudienceValues": [],
     "authenticationAttributes": [
       "uid"
